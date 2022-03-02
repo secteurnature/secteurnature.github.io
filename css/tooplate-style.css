@@ -43,7 +43,7 @@ p {
 =======================*/
 
 .first-section {
-	background-image: url(../img/first-section-bg_.png);
+	background-image: url(../img/first-section-bg_.webp);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -112,7 +112,7 @@ p {
 =======================*/
 
 .third-section {
-	background-image: url(../img/third-section-bg_.png);
+	background-image: url(../img/third-section-bg_.webp);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -155,7 +155,7 @@ p {
 =======================*/
 
 .fourth-section {
-	background-image: url(../img/fourth-section-bg.png);
+	background-image: url(../img/fourth-section-bg.webp);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -232,7 +232,7 @@ p {
 =======================*/
 
 .fivth-section {
-	background-image: url(../img/fivth-section-bg.png);
+	background-image: url(../img/fivth-section-bg.webp);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -280,7 +280,7 @@ p {
 =======================*/
 
 .sixth-section {
-	background-image: url(../img/sixth-section-bg.png);
+	background-image: url(../img/sixth-section-bg.webp);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -376,7 +376,7 @@ p {
 
 footer {
 	text-align: center;
-	background-image: url(../img/footer-bg_.png);
+	background-image: url(../img/footer-bg_.webp);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -439,7 +439,7 @@ footer a:hover {
 ======================*/
 
 .first-gallery-section {
-	background-image: url(../img/heading-bg_.png);
+	background-image: url(../img/heading-bg_.webp);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
