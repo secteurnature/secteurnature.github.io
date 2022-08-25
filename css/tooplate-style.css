@@ -38,9 +38,21 @@ p {
 }
 
 
+
+
 /* ======================
 ----- FIRST SECTION------
 =======================*/
+.first-section .primary-button a {
+	color: white;
+	border: 1px solid;
+}
+.first-section .primary-button{
+	margin-top: 20px;
+	margin-left: 8px;
+
+	display: inline;
+}
 
 .first-section {
 	background-image: url(../img/first-section-bg_.webp);
