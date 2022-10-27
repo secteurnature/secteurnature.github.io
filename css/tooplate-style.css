@@ -6,6 +6,49 @@ http://www.tooplate.com/view/2091-ziggy
 
 */
 
+
+
+
+.first-legal-section {
+	background-image: url(../img/heading-bg_.webp);
+	background-size: cover;
+	width: 100%;
+	background-repeat: no-repeat;
+	padding: 10% 0px 15% 0px;
+}
+
+.first-legal-section .text-content {
+	text-align: left;
+	color: #fff;
+}
+
+.first-legal-section .text-content h2 {
+	font-size: 44px;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 1px;
+}
+
+.first-legal-section .text-content .line-dec {
+	width: 60px;
+	height: 3px;
+	background-color: #fff;
+	margin: 25px auto 25px 0px;
+}
+
+.first-legal-section .text-content span {
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+@media (max-width: 500px){
+	.first-legal-section .text-content .line-dec {
+		margin: 25px auto 100px 0px;
+	}
+
+}
+
 /*============
 BASIC STYLE
 ============*/
