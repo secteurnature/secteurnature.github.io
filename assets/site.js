@@ -3,7 +3,13 @@
   var nav=document.getElementById('nav');
   if(!nav) return;
   var fixed=nav.hasAttribute('data-solid');
-  function onScroll(){nav.classList.toggle('scrolled',fixed||window.scrollY>40);}
+  var call=document.querySelector('.mobile-call');
+  var hero=document.querySelector('.hero');
+  function onScroll(){
+    nav.classList.toggle('scrolled',fixed||window.scrollY>40);
+    // Bouton d'appel mobile : visible une fois le premier écran passé (immédiatement sur les sous-pages)
+    if(call) call.classList.toggle('show',!hero||window.scrollY>hero.offsetHeight*0.6);
+  }
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 
