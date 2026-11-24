@@ -36,71 +36,38 @@ document.addEventListener('click',function(e){
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 
-// Devis guidé (Formspree) — sans JS, toutes les étapes s'affichent et le POST classique fonctionne
+// Demande de visite (Formspree) — sans JS, le POST classique fonctionne aussi
 (function(){
   var form=document.getElementById('contact-form');
   if(!form) return;
   var status=document.getElementById('form-status');
   var btn=form.querySelector('button[type=submit]');
   function show(msg,cls){status.textContent=msg;status.className='form-status '+cls;status.hidden=false;}
+  form.noValidate=true;
 
-  var steps=[].slice.call(form.querySelectorAll('.wz-step'));
-  var back=form.querySelector('.wz-back'),next=form.querySelector('.wz-next');
-  var top=form.querySelector('.wz-top'),bar=form.querySelector('.wz-progress span'),count=form.querySelector('.wz-count');
-  var cur=0;
-  form.classList.add('js');form.noValidate=true;top.hidden=false;
-
-  function go(n,focus){
-    cur=Math.max(0,Math.min(n,steps.length-1));
-    steps.forEach(function(s,k){s.classList.toggle('active',k===cur);});
-    var last=cur===steps.length-1;
-    back.hidden=cur===0;
-    next.hidden=last||steps[cur].hasAttribute('data-auto');
-    btn.hidden=!last;
-    bar.style.width=((cur+1)/steps.length*100)+'%';
-    count.textContent='Étape '+(cur+1)+' sur '+steps.length;
-    clearErr();
-    if(focus){var f=steps[cur].querySelector('input:not([type=hidden]),textarea');if(f)f.focus({preventScroll:true});
-      var r=form.getBoundingClientRect();if(r.top<80||r.top>window.innerHeight*0.5)slowScroll(form);}
-  }
-  function clearErr(){var e=form.querySelector('.wz-error');if(e)e.remove();}
-  function err(msg){clearErr();var p=document.createElement('p');p.className='wz-error';p.setAttribute('role','alert');p.textContent=msg;steps[cur].appendChild(p);}
+  function clearErr(){var e=form.querySelector('.form-error');if(e)e.remove();}
+  function err(msg,field){clearErr();var p=document.createElement('p');p.className='form-error';p.setAttribute('role','alert');p.textContent=msg;btn.before(p);if(field)field.focus();}
+  form.addEventListener('input',clearErr);
   function valid(){
-    var s=steps[cur];
-    var fields=s.querySelectorAll('input[required]:not([type=radio]),textarea[required]');
-    for(var i=0;i<fields.length;i++){if(!fields[i].value.trim()){err('Merci de remplir ce champ : '+fields[i].closest('label').firstChild.textContent.trim()+'.');fields[i].focus();return false;}}
-    var radios={};[].forEach.call(s.querySelectorAll('input[type=radio][required]'),function(r){radios[r.name]=1;});
-    for(var name in radios){if(!s.querySelector('input[name="'+name+'"]:checked')){err('Choisissez une option pour continuer.');return false;}}
-    if(s.querySelector('[name=telephone]')){
-      var tel=form.elements.telephone.value.trim(),mail=form.elements.email.value.trim();
-      if(!tel&&!mail){err('Indiquez un téléphone ou un email pour qu\'on puisse vous répondre.');return false;}
-      if(mail&&!form.elements.email.checkValidity()){err('Cette adresse email ne semble pas valide.');form.elements.email.focus();return false;}
-    }
+    var f=form.elements;
+    if(!f.name.value.trim()){err('Merci d\'indiquer votre nom.',f.name);return false;}
+    var tel=f.telephone.value.trim(),mail=f.email.value.trim();
+    if(!tel&&!mail){err('Indiquez un téléphone ou un email pour que Léon puisse vous rappeler.',f.telephone);return false;}
+    if(mail&&!f.email.checkValidity()){err('Cette adresse email ne semble pas valide.',f.email);return false;}
+    if(!f.commune.value.trim()){err('Merci d\'indiquer votre commune.',f.commune);return false;}
     return true;
   }
-
-  next.addEventListener('click',function(){if(valid())go(cur+1,true);});
-  back.addEventListener('click',function(){go(cur-1,true);});
-  steps.forEach(function(s){
-    if(!s.hasAttribute('data-auto'))return;
-    s.addEventListener('change',function(e){if(e.target.type==='radio')setTimeout(function(){go(cur+1,true);},220);});
-  });
-  form.addEventListener('keydown',function(e){
-    if(e.key==='Enter'&&e.target.tagName==='INPUT'&&cur<steps.length-1){e.preventDefault();if(valid())go(cur+1,true);}
-  });
-  go(0,false);
 
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(!valid())return;
     var data=new FormData(form);
-    var prox=data.getAll('proximite');data.delete('proximite');data.set('proximite',prox.length?prox.join(', '):'Non précisé');
     btn.disabled=true;var label=btn.textContent;btn.textContent='Envoi en cours…';status.hidden=true;
     try{
       var res=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});
       if(res.ok){
         var who=(form.elements.name.value.trim().split(' ')[0])||'';
-        form.innerHTML='<div class="wz-done"><div class="tick">✓</div><h3>Merci'+(who?' '+who.replace(/[<>&"]/g,''):'')+' !</h3><p>Votre demande est bien partie. Léon vous recontacte rapidement.</p><p>Une urgence ? <a href="tel:+33780012233">07 80 01 22 33</a></p></div>';
+        form.innerHTML='<div class="form-done"><div class="tick">✓</div><h3>Merci'+(who?' '+who.replace(/[<>&"]/g,''):'')+' !</h3><p>Votre demande est bien partie. Léon vous rappelle pour fixer la visite.</p><p>Une urgence ? <a href="tel:+33780012233">07 80 01 22 33</a></p></div>';
         return;
       }else{
         var data=await res.json().catch(function(){return {};});

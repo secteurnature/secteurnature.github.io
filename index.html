@@ -50,7 +50,7 @@
       <h1>Vos arbres entre de bonnes mains.</h1>
       <p>Taille, abattage et démontage d'arbres autour de Foix. Un travail soigné, en sécurité, et un chantier laissé propre.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#contact-form">Estimer mon chantier — gratuit</a>
+        <a class="btn btn-primary" href="#contact-form">Demander une visite gratuite</a>
         <a class="btn btn-ghost" href="tel:+33780012233">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
           07 80 01 22 33
@@ -153,8 +153,8 @@
     <div class="wrap">
       <div>
         <span class="eyebrow">Contact</span>
-        <h2>Votre devis en 1 minute</h2>
-        <p style="color:var(--muted);margin:0">Quelques questions rapides sur votre arbre ou votre haie, et nous revenons vers vous avec un devis gratuit.</p>
+        <h2>Demandez une visite gratuite</h2>
+        <p style="color:var(--muted);margin:0">Léon passe chez vous, regarde l'arbre et vous remet un devis gratuit et sans engagement. Laissez simplement vos coordonnées, il vous rappelle pour fixer un rendez-vous.</p>
         <ul class="info">
           <li><a href="tel:+33780012233"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Téléphone</small>07 80 01 22 33</span></a></li>
           <li><a href="https://wa.me/33780012233?text=Bonjour%2C%20je%20vous%20envoie%20une%20photo%20de%20mon%20arbre%20pour%20un%20devis." target="_blank" rel="noopener"><span class="i wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg></span><span><small>WhatsApp · envoyez une photo de l'arbre</small>07 80 01 22 33</span></a></li>
@@ -163,78 +163,28 @@
         </ul>
       </div>
 
-      <!-- Devis guidé : sans JavaScript, toutes les étapes s'affichent comme un formulaire classique -->
-      <form id="contact-form" class="wizard" action="https://formspree.io/f/xwkyolrv" method="POST">
-        <input type="hidden" name="_subject" value="Nouvelle demande de devis — foixelagage.fr">
+      <!-- Demande de visite : Léon passe voir l'arbre avant tout devis -->
+      <form id="contact-form" class="visit-form" action="https://formspree.io/f/xwkyolrv" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle demande de visite — foixelagage.fr">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 
-        <div class="wz-top" hidden>
-          <div class="wz-progress" aria-hidden="true"><span></span></div>
-          <p class="wz-count" aria-live="polite"></p>
+        <div class="form-head">
+          <h3>Léon passe voir votre arbre</h3>
+          <p>Visite et devis gratuits, sans engagement.</p>
         </div>
 
-        <fieldset class="wz-step" data-auto>
-          <legend>Quel type de travaux ?</legend>
-          <div class="choices">
-            <label class="choice"><input type="radio" name="service" value="Taille" required><span><img src="/svgs/taille.svg" alt="">Taille</span></label>
-            <label class="choice"><input type="radio" name="service" value="Abattage"><span><img src="/svgs/tree.svg" alt="">Abattage</span></label>
-            <label class="choice"><input type="radio" name="service" value="Démontage"><span><img src="/svgs/demontage.svg" alt="">Démontage</span></label>
-            <label class="choice"><input type="radio" name="service" value="Autre / je ne sais pas"><span><img src="/svgs/minipelle.svg" alt="">Autre / je ne sais pas</span></label>
-          </div>
-          <aside class="wz-proof"><img src="/static/cb4fd2a9103feba30a080311444bf73b/416c3/h.webp" alt="" loading="lazy"><span>Démontage d'un gros peuplier noir d'Italie à Pamiers</span></aside>
-        </fieldset>
-
-        <fieldset class="wz-step" data-auto>
-          <legend>Quelle hauteur fait l'arbre ou la haie ?</legend>
-          <div class="choices">
-            <label class="choice"><input type="radio" name="hauteur" value="Moins de 3 m (haie, arbuste)" required><span><b>&lt; 3 m</b>Haie, arbuste</span></label>
-            <label class="choice"><input type="radio" name="hauteur" value="3 à 10 m (hauteur de maison)"><span><b>3–10 m</b>Hauteur de maison</span></label>
-            <label class="choice"><input type="radio" name="hauteur" value="Plus de 10 m (plus haut que la maison)"><span><b>&gt; 10 m</b>Plus haut que la maison</span></label>
-            <label class="choice"><input type="radio" name="hauteur" value="Je ne sais pas"><span><b>?</b>Je ne sais pas</span></label>
-          </div>
-          <aside class="wz-proof"><img src="/static/fb16f92fbe26447a7c584d82cc361628/35029/f.webp" alt="" loading="lazy"><span>Grands arbres : taille d'un tilleul à Tain-l'Hermitage</span></aside>
-        </fieldset>
-
-        <fieldset class="wz-step">
-          <legend>Qu'y a-t-il à proximité ? <small>Plusieurs choix possibles</small></legend>
-          <div class="choices">
-            <label class="choice"><input type="checkbox" name="proximite" value="Maison / bâtiment"><span>Maison / bâtiment</span></label>
-            <label class="choice"><input type="checkbox" name="proximite" value="Ligne électrique"><span>Ligne électrique</span></label>
-            <label class="choice"><input type="checkbox" name="proximite" value="Route / clôture"><span>Route / clôture</span></label>
-            <label class="choice"><input type="checkbox" name="proximite" value="Rien de particulier"><span>Rien de particulier</span></label>
-          </div>
-          <aside class="wz-proof"><img src="/static/ee26e6381a0e447a49bc5e7b7938c5ff/f5c71/c.webp" alt="" loading="lazy"><span>Arbre trop près de la maison ? Le démontage pièce par pièce est fait pour ça.</span></aside>
-        </fieldset>
-
-        <fieldset class="wz-step">
-          <legend>Où et quand ?</legend>
-          <label>Commune<input name="commune" autocomplete="address-level2" placeholder="Ex. Foix, Ganac, Pamiers…" required></label>
-          <div class="choices choices-3">
-            <label class="choice"><input type="radio" name="delai" value="Urgent" required><span>Urgent</span></label>
-            <label class="choice"><input type="radio" name="delai" value="Dans le mois"><span>Dans le mois</span></label>
-            <label class="choice"><input type="radio" name="delai" value="Pas pressé"><span>Pas pressé</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="wz-step">
-          <legend>Dernière étape : vos coordonnées</legend>
-          <label>Nom<input name="name" autocomplete="name" required></label>
-          <div class="row2">
-            <label>Téléphone<input name="telephone" type="tel" autocomplete="tel" inputmode="tel"></label>
-            <label>Email<input name="email" type="email" autocomplete="email"></label>
-          </div>
-          <p class="wz-hint">Un téléphone ou un email suffit.</p>
-          <label>Un détail à ajouter ? <span class="opt">(facultatif)</span><textarea name="message" placeholder="Essence de l'arbre, accès au terrain, questions…"></textarea></label>
-        </fieldset>
+        <label>Nom<input name="name" autocomplete="name" required></label>
+        <div class="row2">
+          <label>Téléphone<input name="telephone" type="tel" autocomplete="tel" inputmode="tel"></label>
+          <label>Email<input name="email" type="email" autocomplete="email"></label>
+        </div>
+        <p class="form-hint">Un téléphone ou un email suffit.</p>
+        <label>Commune<input name="commune" autocomplete="address-level2" placeholder="Ex. Foix, Ganac, Pamiers…" required></label>
+        <label><span>Que faut-il faire ? <span class="opt">(facultatif)</span></span><textarea name="message" placeholder="Ex. tailler une haie, abattre un frêne près de la maison…"></textarea></label>
 
         <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
-
-        <div class="wz-nav">
-          <button class="btn btn-outline wz-back" type="button" hidden>← Retour</button>
-          <button class="btn btn-primary wz-next" type="button" hidden>Continuer</button>
-          <button class="btn btn-primary wz-submit" type="submit">Envoyer ma demande</button>
-        </div>
-        <p class="wz-shortcut">Pressé ? <a href="tel:+33780012233">Appelez le 07 80 01 22 33</a> ou <a href="https://wa.me/33780012233?text=Bonjour%2C%20je%20vous%20envoie%20une%20photo%20de%20mon%20arbre%20pour%20un%20devis." target="_blank" rel="noopener">envoyez une photo sur WhatsApp</a></p>
+        <button class="btn btn-primary form-submit" type="submit">Demander ma visite gratuite</button>
+        <p class="form-shortcut">Pressé ? <a href="tel:+33780012233">Appelez le 07 80 01 22 33</a> ou <a href="https://wa.me/33780012233?text=Bonjour%2C%20je%20vous%20envoie%20une%20photo%20de%20mon%20arbre%20pour%20un%20devis." target="_blank" rel="noopener">envoyez une photo sur WhatsApp</a></p>
       </form>
     </div>
   </section>
