@@ -209,10 +209,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 footer a{color:#fff}
 
 /* Sticky mobile call */
+.btn-wa{background:#128c4a;color:#fff}
+.btn-wa:hover{background:#0e7a40}
+.info .i.wa{background:#e3f5ea;color:#128c4a}
 .mobile-call{display:none}
 @media (max-width:700px){
-  .mobile-call{display:flex;position:fixed;left:16px;right:16px;bottom:16px;z-index:60;justify-content:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);
+  .mobile-call{display:flex;gap:10px;position:fixed;left:16px;right:16px;bottom:16px;z-index:60;
     transform:translateY(140%);transition:transform .3s ease}
+  .mobile-call .btn{flex:1;justify-content:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+  .mobile-call .btn-primary{background:var(--forest)}
   .mobile-call.show{transform:none}
   footer{padding-bottom:96px}
 
