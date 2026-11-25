@@ -115,3 +115,19 @@ document.addEventListener('click',function(e){
     if(e.key==='ArrowRight')show(i+1);
   });
 })();
+
+// Apparition douce des blocs au défilement
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var sib=[].slice.call(en.target.parentNode.children).filter(function(c){return c.classList.contains('reveal');});
+      en.target.style.transitionDelay=Math.min(sib.indexOf(en.target),3)*90+'ms';
+      en.target.classList.add('in');io.unobserve(en.target);
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e);});
+})();
