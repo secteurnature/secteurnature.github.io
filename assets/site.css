@@ -67,7 +67,7 @@ header.nav.scrolled{background:rgba(255,253,248,.96);backdrop-filter:blur(10px);
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:140px 0 13vh;
   background:linear-gradient(90deg,rgba(31,58,44,.6) 0%,rgba(31,58,44,.25) 45%,rgba(31,58,44,0) 70%),
   linear-gradient(180deg,rgba(31,58,44,.62) 0%,rgba(31,58,44,.12) 26%,rgba(31,58,44,.18) 55%,rgba(31,58,44,.9) 86%,#1f3a2c 100%),
-  url("/assets/img/burg.jpg") center 30%/cover no-repeat,var(--forest)}
+  url("/static/ebfd4f763e8296ed5288aafdbd0733a1/5267c/hero.jpg") center 30%/cover no-repeat,var(--forest)}
 .hero-inner{position:relative;width:100%}
 .hero-copy{max-width:720px}
 .hero h1{font-size:clamp(2.8rem,6.6vw,5.4rem);max-width:12ch;margin-bottom:.32em;text-shadow:0 2px 30px rgba(15,30,22,.35)}
@@ -175,7 +175,7 @@ header.nav.scrolled{background:rgba(255,253,248,.96);backdrop-filter:blur(10px);
 /* ===== Saison ===== */
 .season{padding:80px 0;color:#fff;
   background:linear-gradient(90deg,rgba(31,58,44,.96) 0%,rgba(31,58,44,.88) 55%,rgba(31,58,44,.55) 100%),
-  url("/assets/img/burg.jpg") center 70%/cover no-repeat,var(--forest)}
+  url("/static/ebfd4f763e8296ed5288aafdbd0733a1/5267c/hero.jpg") center 70%/cover no-repeat,var(--forest)}
 .season .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
 .season .eyebrow{color:var(--light)}
 .season h2{font-style:italic;font-weight:500;font-size:clamp(2rem,4vw,3.1rem);margin-bottom:.4em}
@@ -226,7 +226,7 @@ form .btn[disabled]{opacity:.6;cursor:wait;transform:none}
 /* ===== Sous-pages ===== */
 .page-head{color:#fff;padding:170px 0 80px;
   background:linear-gradient(180deg,rgba(31,58,44,.7),rgba(31,58,44,.95)),
-  url("/assets/img/burg.jpg") center 35%/cover no-repeat,var(--forest)}
+  url("/static/ebfd4f763e8296ed5288aafdbd0733a1/5267c/hero.jpg") center 35%/cover no-repeat,var(--forest)}
 .page-head .eyebrow{color:var(--light)}
 .page-head h1{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:.25em}
 .page-head p{margin:0;opacity:.88;max-width:52ch;font-size:1.08rem}
@@ -237,7 +237,7 @@ form .btn[disabled]{opacity:.6;cursor:wait;transform:none}
 .prose a{color:var(--forest-2)}
 .notfound{min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;padding:120px 20px;
   background:linear-gradient(180deg,rgba(31,58,44,.7),rgba(31,58,44,.95)),
-  url("/assets/img/burg.jpg") center/cover no-repeat,var(--forest)}
+  url("/static/ebfd4f763e8296ed5288aafdbd0733a1/5267c/hero.jpg") center/cover no-repeat,var(--forest)}
 .notfound .big{font-family:Fraunces,serif;font-weight:800;font-size:clamp(5rem,16vw,9rem);line-height:1;margin:0}
 .notfound p{opacity:.88;margin:.5rem 0 2rem;font-size:1.1rem}
 
