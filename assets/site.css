@@ -87,6 +87,9 @@ header.nav.scrolled{background:rgba(255,253,248,.96);backdrop-filter:blur(10px);
 .stamp-green::before{inset:5px;border-color:var(--light)}
 .stamp-green b{font-size:1.5rem;margin:4px 0}
 .stamp-green span{margin:0;color:var(--light);font-size:.82rem}
+/* Hors saison (21 mars - 21 septembre) : pas de tampon « L'hiver » ni de bandeau saison */
+.hors-saison .stamp-green,.hors-saison .season{display:none}
+.hors-saison .stamp{top:auto;left:auto;right:30px;bottom:30px}
 @media (max-width:1240px){.stamps{transform:scale(.8);transform-origin:right bottom}}
 @media (max-height:760px) and (min-width:701px){.stamps{transform:scale(.72);transform-origin:right bottom}}
 @media (max-width:1060px){.stamps{display:none}}

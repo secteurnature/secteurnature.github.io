@@ -21,7 +21,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="/static/ebfd4f763e8296ed5288aafdbd0733a1/5267c/hero.jpg">
 <link rel="stylesheet" href="/assets/site.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>
+// Saison d'élagage : du 22 septembre au 20 mars (automne + hiver). Aperçu possible avec ?saison=en ou ?saison=hors
+(function(d){var m=d.getMonth()+1,j=d.getDate(),q=location.search.match(/[?&]saison=(en|hors)/),
+on=q?q[1]==='en':(m>=10||m<=2||(m===9&&j>=22)||(m===3&&j<=20));
+document.documentElement.classList.add('js',on?'en-saison':'hors-saison');})(new Date());
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Foix Élagage","description":"Arboriste élagueur en Ariège : taille, abattage, démontage.","url":"https://foixelagage.fr/","telephone":"+33780012233","email":"foixelagage@gmail.com","image":"https://foixelagage.fr/assets/img/burg.jpg","founder":{"@type":"Person","name":"Léon Ries"},"address":{"@type":"PostalAddress","streetAddress":"1 Route de Foix","postalCode":"09000","addressLocality":"Ganac","addressCountry":"FR"},"areaServed":"Ariège"}
 </script>
